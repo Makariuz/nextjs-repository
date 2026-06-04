@@ -4,23 +4,7 @@ variable "hcloud_token" {
   sensitive   = true
 }
 
-variable "ssh_key" {
+variable "ssh_public_key" {
   description = "SSH public key for accessing the HCLOUD server"
-  type = object({
-    name    = string
-    ssh_key = string
-  })
-
-}
-
-variable "hcloud_server" {
-  description = "Configuration for the HCLOUD server"
-  type = object({
-    name        = string
-    image       = string
-    server_type = string
-    firewall_ids = list(string)
-    owner       = string
-    user_data   = string
-  })
+  type        = string
 }
