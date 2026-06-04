@@ -1,10 +1,16 @@
 terraform {
+  cloud {
+    organization = "makariuz-test"
+    workspaces {
+      name = "nextjs-repository"
+    }
+  }
   required_providers {
     hcloud = {
       source = "hetznercloud/hcloud"
     }
   }
-  required_version = ">= 0.13"
+  required_version = ">= 1.1"
 }
 
 provider "hcloud" {
