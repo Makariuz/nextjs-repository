@@ -52,7 +52,7 @@ module "hcloud_server" {
 
   ssh_key = {
     name    = "nextjs-terraform-key"
-    ssh_key = file("~/.ssh/id_ed25519.pub")
+    ssh_key = var.ssh_public_key
   }
 
 }

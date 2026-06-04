@@ -28,6 +28,7 @@ jobs:
         run: terraform plan
         env:
           TF_VAR_hcloud_token: ${{ secrets.HCLOUD_TOKEN }}
+          TF_VAR_ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
 
   apply:
     if: github.ref == 'refs/heads/main'
@@ -51,3 +52,4 @@ jobs:
         run: terraform apply -auto-approve
         env:
           TF_VAR_hcloud_token: ${{ secrets.HCLOUD_TOKEN }}
+          TF_VAR_ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
