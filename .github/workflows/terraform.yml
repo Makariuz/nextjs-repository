@@ -7,6 +7,7 @@ jobs:
   plan:
     if: github.ref != 'refs/heads/main'
     runs-on: ubuntu-latest
+    environment: TOKENS
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,7 +34,7 @@ jobs:
   apply:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    environment: production
+    environment: TOKENS
     steps:
       - name: Checkout
         uses: actions/checkout@v4
