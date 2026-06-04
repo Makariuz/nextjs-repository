@@ -47,7 +47,7 @@ module "hcloud_server" {
         server_type = "cx23"
         firewall_ids = [hcloud_firewall.waterFirewall.id]
         owner = "makariuz"
-        user_data = templatefile("scripts/cloud-init.sh", {})
+        user_data = file("scripts/cloud-init.sh")
     }
 
     ssh_key = {
